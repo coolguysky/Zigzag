@@ -5,11 +5,11 @@ using UnityEngine;
 public class PlatformSpawner : MonoBehaviour
 {
     public GameObject platform;
-    Vector3 lastPos;
-    float size;
+    private Vector3 lastPos;
+    private float size;
     public bool gameOver;
     public GameObject diamonds;
-    void Start()
+    private void Start()
     {
         lastPos = platform.transform.position;
         size = platform.transform.localScale.x;
@@ -23,15 +23,14 @@ public class PlatformSpawner : MonoBehaviour
     {
         InvokeRepeating(nameof(SpawnPlatforms), 0.1f, 0.2f);
     }
-    void Update()
+    private void Update()
     {
         if (GameManager.instance.gameOver)
         {
             CancelInvoke("SpawnPlatforms");
         }
     }
-
-    void SpawnPlatforms()
+    private void SpawnPlatforms()
     {
         int rand = Random.Range(0, 2); // int is exclusive
         if(rand < 1)
@@ -42,11 +41,8 @@ public class PlatformSpawner : MonoBehaviour
         {
             SpawnZ();
         }
-
-
     }
-
-    void SpawnX()
+    private void SpawnX()
     {
         Vector3 pos = lastPos;
         pos.x += size;
@@ -60,8 +56,7 @@ public class PlatformSpawner : MonoBehaviour
             diamond.GetComponent<PlatformFollow>().platform = plat;
         }
     }
-
-    void SpawnZ()
+    private void SpawnZ()
     {
         Vector3 pos = lastPos;
         pos.z += size;
@@ -74,6 +69,4 @@ public class PlatformSpawner : MonoBehaviour
             diamond.GetComponent<PlatformFollow>().platform = plat;
         }
     }
-
-
 }

@@ -15,12 +15,12 @@ public class ScoreManager : MonoBehaviour
             instance = this;
         }
     }
-    void Start()
+    private void Start()
     {
         score = 0;
         PlayerPrefs.SetInt("score", score);
     }
-    void IncrementScore()
+    private void IncrementScore()
     {
         score += 1;
     }

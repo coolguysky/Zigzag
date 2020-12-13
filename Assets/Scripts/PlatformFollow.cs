@@ -5,14 +5,14 @@ using UnityEngine;
 public class PlatformFollow : MonoBehaviour
 {
     public GameObject platform;
-    Vector3 offset;
+    private Vector3 offset;
     public float lerpRate = 2;
 
-    void Start()
+    private void Start()
     {
         offset = platform.transform.position - transform.position;
     }
-    void Update()
+    private void Update()
     {
         if (platform != null)
         {

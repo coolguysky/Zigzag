@@ -21,7 +21,7 @@ public class UIManager : MonoBehaviour
             instance = this;
         }
     }
-    void Start()
+    private void Start()
     {
         highScore1.text = "High Score: " + PlayerPrefs.GetInt("highScore").ToString();
     }

@@ -6,19 +6,19 @@ public class TriggerChecker : MonoBehaviour
 {
     public bool falldown;
 
-    void Start()
+    private void Start()
     {
         falldown = false;
     }
     private void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.tag == "Ball")
+        if (col.gameObject.CompareTag("Ball"))
         {
-            Invoke("FallDown", 1f);
+            Invoke(nameof(FallDown), 1f);
             falldown = true;
         }
     }
-    void FallDown()
+    private void FallDown()
     {
         GetComponentInParent<Rigidbody>().isKinematic = false;
         GetComponentInParent<Rigidbody>().useGravity = true;

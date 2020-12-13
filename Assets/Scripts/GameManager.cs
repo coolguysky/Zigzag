@@ -14,7 +14,7 @@ public class GameManager : MonoBehaviour
             instance = this;
         }
     }
-    void Start()
+    private void Start()
     {
         gameOver = false;
     }

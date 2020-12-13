@@ -5,23 +5,23 @@ using UnityEngine;
 public class CameraFollow : MonoBehaviour
 {
     public GameObject ball;
-    Vector3 offset;
+    private Vector3 offset;
     public float lerpRate;
     public bool gameOver;
 
-    void Start()
+    private void Start()
     {
         offset = ball.transform.position - transform.position;
         gameOver = false;
     }
-    void Update()
+    private void Update()
     {
         if (!gameOver)
         {
             Follow();
         }
     }
-    void Follow()
+    private void Follow()
     {
         Vector3 pos = transform.position;
         Vector3 targetPos = ball.transform.position - offset;

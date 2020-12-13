@@ -5,21 +5,21 @@ using UnityEngine;
 public class BallController : MonoBehaviour
 {
     [SerializeField] private float speed;
-    Rigidbody rb;
-    bool started;
-    bool gameOver;
+    private Rigidbody rb;
+    private bool started;
+    private bool gameOver;
     public GameObject particle;
 
     private void Awake()
     {
         rb = GetComponent<Rigidbody>();
     }
-    void Start()
+    private void Start()
     {
         started = false;
         gameOver = false;
     }
-    void Update()
+    private void Update()
     {
         if (!started)
         {
@@ -43,7 +43,7 @@ public class BallController : MonoBehaviour
             SwitchDirection();
         }
     }
-    void SwitchDirection()
+    private void SwitchDirection()
     {
         if(rb.velocity.z > 0)
         {
