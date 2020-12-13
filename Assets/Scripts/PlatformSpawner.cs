@@ -18,15 +18,11 @@ public class PlatformSpawner : MonoBehaviour
         {
             SpawnPlatforms();
         }
-
-        
     }
-
     public void StartSpawningPlatforms()
     {
-        InvokeRepeating("SpawnPlatforms", 0.1f, 0.2f);
+        InvokeRepeating(nameof(SpawnPlatforms), 0.1f, 0.2f);
     }
-
     void Update()
     {
         if (GameManager.instance.gameOver)

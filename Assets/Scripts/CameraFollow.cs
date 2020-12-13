@@ -8,15 +8,12 @@ public class CameraFollow : MonoBehaviour
     Vector3 offset;
     public float lerpRate;
     public bool gameOver;
+
     void Start()
     {
-        Vector3 cam = transform.position;
-        Vector3 player = ball.transform.position;
-
         offset = ball.transform.position - transform.position;
         gameOver = false;
     }
-
     void Update()
     {
         if (!gameOver)
@@ -24,7 +21,6 @@ public class CameraFollow : MonoBehaviour
             Follow();
         }
     }
-
     void Follow()
     {
         Vector3 pos = transform.position;

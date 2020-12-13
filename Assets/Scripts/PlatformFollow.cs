@@ -6,13 +6,10 @@ public class PlatformFollow : MonoBehaviour
 {
     public GameObject platform;
     Vector3 offset;
-    float lerpRate = 2;
+    public float lerpRate = 2;
 
     void Start()
     {
-        Vector3 cam = transform.position;
-        Vector3 player = platform.transform.position;
-
         offset = platform.transform.position - transform.position;
     }
     void Update()
@@ -29,7 +26,5 @@ public class PlatformFollow : MonoBehaviour
                 Destroy(gameObject, 4f);
             }
         }
-        
-        
     }
 }

@@ -19,7 +19,6 @@ public class BallController : MonoBehaviour
         started = false;
         gameOver = false;
     }
-
     void Update()
     {
         if (!started)
@@ -44,7 +43,6 @@ public class BallController : MonoBehaviour
             SwitchDirection();
         }
     }
-
     void SwitchDirection()
     {
         if(rb.velocity.z > 0)
@@ -56,10 +54,9 @@ public class BallController : MonoBehaviour
             rb.velocity = new Vector3(0, 0, speed);
         }
     }
-
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.tag == "Diamond")
+        if (other.gameObject.CompareTag("Diamond"))
         {
             GameObject par = Instantiate(particle, other.gameObject.transform.position, Quaternion.identity);
             Destroy(other.gameObject);

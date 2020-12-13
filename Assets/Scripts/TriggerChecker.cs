@@ -5,11 +5,11 @@ using UnityEngine;
 public class TriggerChecker : MonoBehaviour
 {
     public bool falldown;
+
     void Start()
     {
         falldown = false;
     }
-
     private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.tag == "Ball")
@@ -18,7 +18,6 @@ public class TriggerChecker : MonoBehaviour
             falldown = true;
         }
     }
-
     void FallDown()
     {
         GetComponentInParent<Rigidbody>().isKinematic = false;
